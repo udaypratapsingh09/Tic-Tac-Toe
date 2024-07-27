@@ -24,3 +24,13 @@ section > p {
 section:nth-child(1) {
   border: none;
 }
+section > .images {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+section > .images > img {
+  height: 30%;
+  min-height: 150px;
+  max-height: 250px;
+}
