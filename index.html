@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas></canvas>
+    <section id="main">
+      <div id="gameArea">
+        <div class="player1">Player 1</div>
+        <table id="grid"></table>
+        <div class="player2">Player 2</div>
+      </div>
+      <div class="bottom">
+        <div class="result"></div>
+        <button class="playAgainBtn hidden">Play Again</button>
+      </div>
+    </section>
+    <section id="sidebar">
+      <div>Select a mode to play</div>
+      <div class="mode-selector">
+        <label for="Classic">Classic</label>
+        <input type="radio" name="mode" id="Classic" value="Classic" checked />
+        <a href="help.html" class="help">?</a>
+      </div>
+      <div class="mode-selector">
+        <label for="Pyramid">Pyramid</label>
+        <input type="radio" name="mode" id="Pyramid" value="Pyramid" />
+        <a href="help.html" class="help">?</a>
+      </div>
+      <div class="mode-selector">
+        <label for="Standard5x5">Standard5x5</label>
+        <input type="radio" name="mode" id="Standard5x5" value="Standard5x5" />
+        <a href="help.html" class="help">?</a>
+      </div>
+      <div class="mode-selector">
+        <label for="Wild">Wild</label>
+        <input type="radio" name="mode" id="Wild" value="Wild" />
+        <a href="help.html" class="help">?</a>
+      </div>
+      <div class="mode-selector">
+        <label for="Wild5x5">Wild 5x5</label>
+        <input type="radio" name="mode" id="Wild5x5" value="Wild5x5" />
+        <a href="help.html" class="help">?</a>
+      </div>
+      <!-- blank exists to push playBtn to end -->
+      <div class="blank"></div>
+      <button class="playBtn">Play</button>
+    </section>
+    <!-- <script src="app-copy.js"></script> -->
+    <script src="app.js"></script>
+  </body>
+</html>

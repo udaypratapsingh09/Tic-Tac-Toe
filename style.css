@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #202020;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#main {
+  flex-basis: 80%;
+  padding: 20px;
+}
+#gameArea {
+  display: flex;
+  justify-content: space-evenly;
+  height: 70vh;
+}
+
+#grid {
+  border-collapse: collapse;
+  align-self: center;
+  z-index: 1;
+}
+canvas {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+td {
+  height: 40px;
+  width: 40px;
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+}
+.border {
+  border: 2px solid azure;
+}
+.border-top {
+  border-top: 2px solid azure;
+}
+.border-left {
+  border-left: 2px solid azure;
+}
+.hidden {
+  visibility: hidden;
+  border: none;
+  pointer-events: none;
+}
+.disabled {
+  background-color: gray;
+  pointer-events: none;
+}
+.wildcard {
+  background-color: violet;
+  pointer-events: none;
+}
+.player1 {
+  color: #007fff;
+  font-size: 24px;
+}
+.player2 {
+  color: #ff2400;
+  font-size: 24px;
+}
+.result {
+  font-size: 16px;
+  color: white;
+}
+input[type="radio"] {
+  visibility: hidden;
+  position: absolute;
+}
+.bottom {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+}
+div.mode-selector {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 20px;
+  background-color: #303030;
+}
+div.mode-selector > label {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+div.mode-selector > .help {
+  position: absolute;
+  visibility: hidden;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+div.mode-selector:hover {
+  background-color: gray;
+  .help {
+    visibility: visible;
+  }
+}
+div.mode-selector:has(input:checked) {
+  background-color: rebeccapurple;
+}
+#sidebar {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1rem;
+  padding: 20px 10px;
+  background-color: #252525;
+}
+.blank {
+  flex-grow: 1;
+}
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: #5ace5a;
+}
