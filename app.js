@@ -13,6 +13,8 @@ const std5x5Mode = document.querySelector("#Standard5x5").value;
 const wildMode = document.querySelector("#Wild").value;
 const wild5x5Mode = document.querySelector("#Wild5x5").value;
 const resultDiv = document.querySelector(".result");
+const showMenuBtn = document.querySelector(".showMenu");
+const sidebar = document.querySelector("#sidebar");
 
 const x = "x";
 const o = "o";
@@ -23,9 +25,16 @@ let currentMode;
 
 playBtn.addEventListener("click", () => {
   play(false);
+  sidebar.classList.remove("visible");
+  sidebar.classList.add("sm-hidden");
+  showMenuBtn.classList.toggle("sm-hidden");
 });
 playAgainBtn.addEventListener("click", () => {
   play(true);
+});
+showMenuBtn.addEventListener("click", () => {
+  sidebar.classList.remove("sm-hidden");
+  sidebar.classList.add("visible");
 });
 
 function play(playAgain) {
@@ -65,6 +74,7 @@ function showResult(gameWinner) {
   if (gameWinner == null) resultDiv.textContent = "DRAW";
   else resultDiv.textContent = `${gameWinner.name} has won!!!`;
   playAgainBtn.classList.remove("hidden");
+  showMenuBtn.classList.toggle("sm-hidden");
 }
 
 function markComplete(start, end, player) {

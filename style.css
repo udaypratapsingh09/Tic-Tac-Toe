@@ -14,6 +14,7 @@ body {
 #main {
   flex-basis: 80%;
   padding: 20px;
+  flex-wrap: wrap;
 }
 #gameArea {
   display: flex;
@@ -32,10 +33,10 @@ canvas {
   z-index: 2;
 }
 td {
-  height: 40px;
-  width: 40px;
+  height: 2.5rem;
+  width: 2.5rem;
   color: whitesmoke;
-  font-size: 30px;
+  font-size: 2rem;
   text-align: center;
 }
 .border {
@@ -62,14 +63,13 @@ td {
 }
 .player1 {
   color: #007fff;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 .player2 {
   color: #ff2400;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 .result {
-  font-size: 16px;
   color: white;
 }
 input[type="radio"] {
@@ -128,4 +128,61 @@ button {
   border-radius: 6px;
   border: none;
   background-color: #5ace5a;
+}
+.showMenu {
+  background-color: transparent;
+  display: none;
+}
+
+@keyframes appear {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes disappear {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #gameArea {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 450px) {
+  body {
+    display: block;
+  }
+  .bottom {
+    gap: 1.2rem;
+  }
+  .showMenu {
+    display: inline;
+  }
+  .sm-hidden {
+    visibility: hidden;
+  }
+  #sidebar {
+    position: absolute;
+    z-index: 2;
+    top: 0%;
+    height: 100vh;
+    width: 100%;
+    &.hidden {
+      animation: 0.5s disappear ease-in forwards;
+    }
+    &.visible {
+      animation: 0.5s appear ease-in forwards;
+    }
+  }
 }
