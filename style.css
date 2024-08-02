@@ -95,11 +95,15 @@ div.mode-selector > label {
 }
 div.mode-selector > .help {
   position: absolute;
+  right: 15px;
   visibility: hidden;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
+  padding-bottom: 6px;
   text-decoration: none;
+  border: 2px solid white;
+  text-align: center;
 }
 div.mode-selector:hover {
   background-color: gray;
@@ -128,6 +132,7 @@ button {
   border-radius: 6px;
   border: none;
   background-color: #5ace5a;
+  box-shadow: 4px 4px #002500;
 }
 .showMenu {
   background-color: transparent;
@@ -171,6 +176,9 @@ button {
   }
   .sm-hidden {
     visibility: hidden;
+  }
+  .lg-only {
+    display: none;
   }
   #sidebar {
     position: absolute;
