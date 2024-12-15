@@ -72,7 +72,12 @@ function clearBoard() {
 
 function showResult(gameWinner) {
   if (gameWinner == null) resultDiv.textContent = "DRAW";
-  else resultDiv.textContent = `${gameWinner.name} has won!!!`;
+  else {resultDiv.textContent = `${gameWinner.name} has won!!!`;
+  confetti({
+    particleCount: 200,
+    spread: 100,
+    origin: {x: 0.4 , y: 0.6 },
+  });}
   playAgainBtn.classList.remove("hidden");
   showMenuBtn.classList.toggle("sm-hidden");
 }
